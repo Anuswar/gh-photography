@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Favicon -->
+    <title>GH photography</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo-white.png" />
+
+    <!-- External Scripts -->
+    <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <!--==================== PRELOADER ====================-->
+    <div class="preloader" data-preloader>
+      <span class="line"></span>
+    </div>
+
+    <!--==================== HEADER ====================-->
+    <header class="header" id="home">
+      <nav class="nav">
+        <div class="nav-header">
+          <div class="nav-logo">
+            <a href="#">
+              <img src="assets/images/logo-white.png" alt="logo" />
+            </a>  
+          </div>
+
+          <div class="nav-menu-btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+  
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">HOME</a></li>
+  
+          <li><a href="#about">ABOUT US</a></li>
+      
+          <li class="nav-logo">
+            <a href="#">
+              <img src="assets/images/logo-white.png" alt="logo" />
+            </a>
+          </li>
+      
+          <li><a href="#service">SERVICES</a></li>
+          <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--==================== ABOUT ====================-->
+    <div class="section-container about-container" id="about">
+      <h2 class="section-header">WE CAPTURE THE MOMENTS</h2>
+
+      <p class="section-description">
+        At Capturer, we specialize in freezing those fleeting moments in time
+        that hold immense significance for you. With our passion for photography
+        and keen eye for detail, we transform ordinary moments into
+        extraordinary memories.
+      </p>
+
+      <p class="section-description">
+        Whether it's a milestone event, a candid portrait, or the breathtaking
+        beauty of nature, we strive to encapsulate the essence of every moment,
+        ensuring that your cherished memories last a lifetime. Trust us to
+        capture the magic of your life's journey, one frame at a time.
+      </p>
+
+      <div class="gallery-btn">
+        <button onclick="document.getElementById('id01').style.display='block'" style="width: auto" class="btn">BOOK NOW</button>
+      </div>
+    </div>
+
+    <!--==================== BOOKING FORM ====================-->
+    <div id="id01" class="modal">
+      <form class="modal-content animate" autocomplete="off" action="https://formsubmit.co/anuswarrrao@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New Photography Booking!" />
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html" />
+
+    
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+        </div>
+
+    
+        <h1>Photography Booking Form</h1>
+        <p>I’m excited to capture your special moments. Ready to book a session?</p>
+
+    
+        <div class="row">
+          <!-- Name -->
+          <label for="name"><b>Name</b></label>
+          <input type="text" name="name" id="name" placeholder="Your name here" autocomplete="name" required />
+
+    
+          <!-- Email -->
+          <label for="email"><b>Email</b></label>
+          <input type="email" name="email" id="email" placeholder="Your email here" autocomplete="email" required />
+
+
+      
+          <!-- Mobile Number -->
+          <label for="number"><b>Mobile No.</b></label>
+          <input type="tel" name="number" id="number" placeholder="Your mobile number here" autocomplete="tel" required />
+
+      
+          <!-- Date -->
+          <label for="date"><b>Date</b></label>
+          <input type="date" name="date" id="date" placeholder="Preferred date for the session" autocomplete="off" required />
+
+      
+          <!-- Event -->
+          <label for="message"><b>Event Details</b></label>
+          <textarea id="message" name="message" placeholder="Describe the event or session details" rows="5" autocomplete="off" required></textarea>
+
+          <!-- Send button -->
+          <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+            <button id="submit-button" type="submit" class="signupbtn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--==================== GALLERY ====================-->
+    <section class="section-container gallery-container">
+      <h2 class="section-header">~ GALLERY ~</h2>
+
+      <div class="gallery-grid">
+        <img class="img-items" src="assets/images/image-1.jpg" alt="gallery" />
+        <img class="img-items" src="assets/images/image-2.jpg" alt="gallery" />
+        <img class="img-items" src="assets/images/image-3.jpg" alt="gallery" />
+        <img class="img-items" src="assets/images/image-4.jpg" alt="gallery" />
+        <img class="img-items" src="assets/images/image-5.jpg" alt="gallery" />
+        <img class="img-items" src="assets/images/image-6.jpg" alt="gallery" />
+        <img class="img-items" src="assets/images/image-7.jpg" alt="gallery" />
+        <img class="img-items" src="assets/images/image-8.jpg" alt="gallery" />
+      </div>
+
+      <div class="gallery-btn">
+        <button class="btn">VIEW GALLERY</button>
+      </div>
+    </section>
+
+    <!--==================== SERVICE ====================-->
+    <section class="service" id="service">
+      <div class="section-container service-container">
+        <h2 style="color: white;" class="section-header">~ SERVICES ~</h2>
+
+        <p class="section-description">
+          At Capturer, we offer a range of professional photography services
+          tailored to meet your unique needs. With a commitment to excellence
+          and creativity, we strive to exceed your expectations, delivering
+          captivating visuals that tell your story with authenticity and
+          passion.
+        </p>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <h4>Portrait Sessions</h4>
+
+            <p>
+              Our portrait sessions are designed to showcase your personality
+              and style in stunning imagery.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <h4>Maternity Sessions</h4>
+
+            <p>
+              Embrace the beauty and miracle of new life with our maternity and
+              newborn photography sessions.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <h4>Family Sessions</h4>
+            <p>
+              Cherish the bond of family with our custom-designed playful candid
+              moments and portrait sessions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== SCROLL UP===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-fill"></i>
+    </a>
+
+    <!--==================== FOOTER ====================-->
+    <footer>
+      <div class="section-container footer-container">
+        <div class="footer-col">
+          <img class="hero-img" src="assets/images/logo-dark.png" alt="logo" />
+
+          <div class="footer-socials">
+            <a class="social-icon" href="#"><i class="ri-facebook-fill"></i></a>
+            <a class="social-icon" href="#"><i class="ri-instagram-line"></i></a>
+            <a class="social-icon" href="#"><i class="ri-twitter-fill"></i></a>
+            <a class="social-icon" href="#"><i class="ri-youtube-fill"></i></a>
+            <a class="social-icon" href="#"><i class="ri-pinterest-line"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <ul class="footer-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#service">SERVICES</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>STAY IN TOUCH</h4>
+
+          <p>
+            Keep up-to-date with all things Capturer! Join our community and
+            never miss a moment!
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <div class="footer-text">
+          Copyright © 2024 Anuswar. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
