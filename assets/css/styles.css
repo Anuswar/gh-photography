@@ -405,6 +405,8 @@ html:hover {
 
 .gallery-btn {
   text-align: center;
+  justify-content: center;
+  display: flex;
 }
 
 /*======= BREAKPOINTS =======*/
