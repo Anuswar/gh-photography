@@ -8,8 +8,8 @@ To run this website locally or contribute to its development, follow these steps
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/cisc-2024.git
-    cd cisc-2024
+    git clone https://github.com/Anuswar/pixeleyes.git
+    cd pixeleyes
     ```
 
 2. **Open the `index.html` file** in your preferred web browser or set up a local development server:
@@ -25,11 +25,11 @@ To run this website locally or contribute to its development, follow these steps
 
 - HTML
 - CSS
+- remixicon
 - JavaScript
-- Bootstrap
 - ScrollReveal.js
-- Hammer.js
 - Swiper Bundle.js
+- formsubmit.co
 
 ## 📂 Project Structure
 
@@ -38,7 +38,7 @@ The project structure is organized as follows:
 - **index.html**: The main HTML file containing the structure of the website.
 - **assets**: This directory contains subdirectories for images, CSS styles, and JavaScript files.
   - **css**: Stylesheets, including `style.css`.
-  - **images**: Images used in the website, organized into subdirectories (e.g., `home`, `key`, `sneaker`, `contact`).
+  - **images**: Images used in the website, organized into subdirectories (e.g., `home`, `gallery`, `service`).
   - **js**: JavaScript files, including `scrollreveal.js`, `hammer.js`, and `swiper-bundle.js`.
 - **README.md**: Documentation for the project (you are here).
 
