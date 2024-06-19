@@ -76,7 +76,7 @@ const sr = ScrollReveal({
 sr.reveal(`.section-header`, {
   delay: 600,
 });
-sr.reveal(`.nav, .footer-text, .img-items, .social-icon, .service-card, .footer-links, .footer-col`, {
+sr.reveal(`.nav, .img-items, .social-icon, .service-card, .footer-links, .footer-col`, {
   origin: "top",
   interval: 100,
 });
