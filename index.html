@@ -89,13 +89,13 @@
 
       <!--==================== BOOKING FORM ====================-->
       <div id="id01" class="modal">
-        <form class="modal-content animate" autocomplete="off" action="https://formsubmit.co/email@example.com" method="POST">
+        <form class="modal-content animate" autocomplete="off" action="https://formsubmit.co/email@example.com" method="POST" onsubmit="validateForm(event)">
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_subject" value="New Photography Booking!" />
           <input type="hidden" name="_next" value="https://pixeleyes.netlify.app/thanks.html" />
 
           <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
           </div>
 
           <h1>Photography Booking Form</h1>
@@ -105,14 +105,17 @@
             <!-- Name -->
             <label for="name"><b>Name</b></label>
             <input type="text" name="name" id="name" placeholder="Your name here" autocomplete="name" required />
+            <div id="nameError" class="error"></div>
 
             <!-- Email -->
             <label for="email"><b>Email</b></label>
             <input type="email" name="email" id="email" placeholder="Your email here" autocomplete="email" required />
+            <div id="emailError" class="error"></div>
 
             <!-- Mobile Number -->
             <label for="number"><b>Mobile No.</b></label>
             <input type="tel" name="number" id="number" placeholder="Your mobile number here" autocomplete="tel" required />
+            <div id="numberError" class="error"></div>
 
             <!-- Date -->
             <label for="date"><b>Date</b></label>
@@ -120,12 +123,11 @@
 
             <!-- Event -->
             <label for="message"><b>Event Details</b></label>
-            <textarea textarea id="message" name="message" placeholder="Describe the event or session details" rows="5" autocomplete="off" required></textarea>
+            <textarea id="message" name="message" placeholder="Describe the event or session details" rows="5" autocomplete="off" required></textarea>
 
             <!-- Send button -->
             <div class="clearfix">
               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
               <button id="submit-button" type="submit" class="signupbtn">Submit</button>
             </div>
           </div>
@@ -159,7 +161,7 @@
         <h2 style="color: white;" class="section-header">~ SERVICES ~</h2>
 
         <p class="section-description">
-          At pixeleyes, we offer a range of professional photography services
+          At Pixeleyes, we offer a range of professional photography services
           tailored to meet your unique needs. With a commitment to excellence
           and creativity, we strive to exceed your expectations, delivering
           captivating visuals that tell your story with authenticity and
@@ -201,8 +203,6 @@
       <div class="section-container footer-container">
         <div class="footer-col">
           <img class="hero-img" src="assets/images/logo-dark.png" alt="logo" />
-
-          <p>+91 77950 12652</p>
         </div>
 
         <div class="footer-col">

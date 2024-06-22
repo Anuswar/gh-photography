@@ -126,6 +126,58 @@ window.onclick = function (event) {
   }
 };
 
+function validateForm(event) {
+  event.preventDefault();
+  
+  // Clear previous error messages and styles
+  document.querySelectorAll('.error').forEach(function(el) {
+    el.textContent = '';
+  });
+  
+  document.querySelectorAll('.input-error').forEach(function(el) {
+    el.classList.remove('input-error');
+  });
+  
+  let valid = true;
+            
+  // Name validation
+  const name = document.getElementById('name').value;
+  const nameError = document.getElementById('nameError');
+  const nameInput = document.getElementById('name');
+  if (!name.match(/^[a-zA-Z\s]+$/)) {
+    nameError.textContent = 'Please enter a valid name (letters and spaces only).';
+    nameInput.classList.add('input-error');
+    valid = false;
+  }
+            
+  // Email validation
+  const email = document.getElementById('email').value;
+  const emailError = document.getElementById('emailError');
+  const emailInput = document.getElementById('email');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    emailError.textContent = 'Please enter a valid email address.';
+    emailInput.classList.add('input-error');
+    valid = false;
+  }
+            
+  // Mobile number validation
+  const number = document.getElementById('number').value;
+  const numberError = document.getElementById('numberError');
+  const numberInput = document.getElementById('number');
+  const numberPattern = /^[0-9]{10}$/;
+  if (!numberPattern.test(number)) {
+    numberError.textContent = 'Please enter a valid 10-digit mobile number.';
+    numberInput.classList.add('input-error');
+    valid = false;
+  }
+           
+  // If all validations pass, submit the form
+  if (valid) {
+    document.querySelector('form').submit();
+  }  
+}
+
 /*=============== SCROLL UP ===============*/
 // Function to check scroll position and show/hide scroll-to-top button
 const scrollUp = () => {

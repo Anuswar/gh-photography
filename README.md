@@ -1,7 +1,7 @@
-# pixeleyes Website 🌐
+# CISC-2024 Conference Website 🌐
 
- This repository showcases a collection of high-resolution images that celebrate the beauty of life in its myriad forms
- 
+Welcome to the GitHub repository for the CISC-2024 Conference website! This repository contains the source code for the website that provides information about the first annual International Conference on Computational Intelligence and Smart Communication (CISC-2024) organized by Shri Madhwa Vadiraja Institute of Technology and Management (SMVITM), Bantakal, Udupi, Karnataka, India.
+
 ## ⚙️ Installation
 
 To run this website locally or contribute to its development, follow these steps:
@@ -39,7 +39,7 @@ The project structure is organized as follows:
 - **assets**: This directory contains subdirectories for images, CSS styles, and JavaScript files.
   - **css**: Stylesheets, including `style.css`.
   - **images**: Images used in the website, organized into subdirectories (e.g., `home`, `gallery`, `service`).
-  - **js**: JavaScript files, including `scrollreveal.js`, and `swiper-bundle.js`.
+  - **js**: JavaScript files, including `scrollreveal.js`, `hammer.js`, and `swiper-bundle.js`.
 - **README.md**: Documentation for the project (you are here).
 
 ## 🤝 Contributing
