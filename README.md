@@ -28,7 +28,7 @@ To run this website locally or contribute to its development, follow these steps
 - remixicon
 - JavaScript
 - ScrollReveal.js
-- Swiper Bundle.js
+- crypto.js
 - formsubmit.co
 
 ## 📂 Project Structure
