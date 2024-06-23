@@ -1,6 +1,6 @@
 ![pixeleyes Website Preview](https://raw.githubusercontent.com/Anuswar/pixeleyes/main/assets/images/preview.jpg)
 
-# 📸 Pixeleyes Photography 
+# 📸 Pixeleyes Website 
 
 Welcome to Pixeleyes, where we specialize in capturing and preserving the moments that matter most to you. From milestone events to everyday beauty, we are passionate about transforming fleeting moments into everlasting memories through our photography.
 
