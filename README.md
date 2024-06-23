@@ -1,4 +1,4 @@
-![pixeleyes Website Preview](https://raw.githubusercontent.com/Anuswar/pixeleyes/main/assets/images/preview.png)
+![pixeleyes Website Preview](https://raw.githubusercontent.com/Anuswar/pixeleyes/main/assets/images/preview.jpg)
 
 # Pixeleyes Photography 🌐
 
