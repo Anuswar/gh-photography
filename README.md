@@ -1,6 +1,6 @@
-# CISC-2024 Conference Website 🌐
+# Pixeleyes Photography 🌐
 
-Welcome to the GitHub repository for the CISC-2024 Conference website! This repository contains the source code for the website that provides information about the first annual International Conference on Computational Intelligence and Smart Communication (CISC-2024) organized by Shri Madhwa Vadiraja Institute of Technology and Management (SMVITM), Bantakal, Udupi, Karnataka, India.
+Welcome to Pixeleyes, where we specialize in capturing and preserving the moments that matter most to you. From milestone events to everyday beauty, we are passionate about transforming fleeting moments into everlasting memories through our photography.
 
 ## ⚙️ Installation
 
