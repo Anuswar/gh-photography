@@ -117,66 +117,149 @@ window.addEventListener('scroll', highlightCurrentSection);
 
 /*=============== BOOKING FORM ===============*/
 // Get the modal
-var modal = document.getElementById("id01");
+    var modal = document.getElementById("id01");
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+    // Function to close the modal
+    function closeModal() {
+      modal.style.display = "none";
+    }
 
-function validateForm(event) {
-  event.preventDefault();
-  
-  // Clear previous error messages and styles
-  document.querySelectorAll('.error').forEach(function(el) {
-    el.textContent = '';
-  });
-  
-  document.querySelectorAll('.input-error').forEach(function(el) {
-    el.classList.remove('input-error');
-  });
-  
-  let valid = true;
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
+
+    // Close the modal when the 'Esc' key is pressed
+    window.onkeydown = function(event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    const encryptionKey = "my_secret_key"; // Use a secure key in production
+
+    function encryptData(data) {
+      return CryptoJS.AES.encrypt(JSON.stringify(data), encryptionKey).toString();
+    }
+
+    function decryptData(encryptedData) {
+      const bytes = CryptoJS.AES.decrypt(encryptedData, encryptionKey);
+      return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    }
+
+    function saveToLocalStorage() {
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        number: document.getElementById('number').value,
+        date: document.getElementById('date').value,
+        message: document.getElementById('message').value
+      };
+      const encryptedData = encryptData(formData);
+      localStorage.setItem('formData', encryptedData);
+    }
+
+    function loadFromLocalStorage() {
+      const encryptedData = localStorage.getItem('formData');
+      if (encryptedData) {
+        const formData = decryptData(encryptedData);
+        document.getElementById('name').value = formData.name || '';
+        document.getElementById('email').value = formData.email || '';
+        document.getElementById('number').value = formData.number || '';
+        document.getElementById('date').value = formData.date || '';
+        document.getElementById('message').value = formData.message || '';
+      }
+    }
+
+    function validateForm(event) {
+      event.preventDefault();
+      
+      // Clear previous error messages and styles
+      document.querySelectorAll('.error').forEach(function(el) {
+        el.textContent = '';
+      });
+      
+      document.querySelectorAll('.input-error').forEach(function(el) {
+        el.classList.remove('input-error');
+      });
+      
+      let valid = true;
+      let firstInvalidElement = null;
+
+      // Name validation
+      const name = document.getElementById('name').value;
+      const nameError = document.getElementById('nameError');
+      const nameInput = document.getElementById('name');
+      if (!name.match(/^[a-zA-Z\s]+$/)) {
+        nameError.textContent = 'Please enter a valid name (letters and spaces only).';
+        nameInput.classList.add('input-error');
+        valid = false;
+        if (!firstInvalidElement) firstInvalidElement = nameInput;
+      }
             
-  // Name validation
-  const name = document.getElementById('name').value;
-  const nameError = document.getElementById('nameError');
-  const nameInput = document.getElementById('name');
-  if (!name.match(/^[a-zA-Z\s]+$/)) {
-    nameError.textContent = 'Please enter a valid name (letters and spaces only).';
-    nameInput.classList.add('input-error');
-    valid = false;
-  }
+      // Email validation
+      const email = document.getElementById('email').value;
+      const emailError = document.getElementById('emailError');
+      const emailInput = document.getElementById('email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        emailError.textContent = 'Please enter a valid email address.';
+        emailInput.classList.add('input-error');
+        valid = false;
+        if (!firstInvalidElement) firstInvalidElement = emailInput;
+      }
             
-  // Email validation
-  const email = document.getElementById('email').value;
-  const emailError = document.getElementById('emailError');
-  const emailInput = document.getElementById('email');
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    emailError.textContent = 'Please enter a valid email address.';
-    emailInput.classList.add('input-error');
-    valid = false;
-  }
-            
-  // Mobile number validation
-  const number = document.getElementById('number').value;
-  const numberError = document.getElementById('numberError');
-  const numberInput = document.getElementById('number');
-  const numberPattern = /^[0-9]{10}$/;
-  if (!numberPattern.test(number)) {
-    numberError.textContent = 'Please enter a valid 10-digit mobile number.';
-    numberInput.classList.add('input-error');
-    valid = false;
-  }
+      // Mobile number validation
+      const number = document.getElementById('number').value;
+      const numberError = document.getElementById('numberError');
+      const numberInput = document.getElementById('number');
+      const numberPattern = /^[0-9]{10}$/;
+      if (!numberPattern.test(number)) {
+        numberError.textContent = 'Please enter a valid 10-digit mobile number.';
+        numberInput.classList.add('input-error');
+        valid = false;
+        if (!firstInvalidElement) firstInvalidElement = numberInput;
+      }
            
-  // If all validations pass, submit the form
-  if (valid) {
-    document.querySelector('form').submit();
-  }  
-}
+      // Scroll to the first invalid input if any
+      if (firstInvalidElement) {
+        firstInvalidElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstInvalidElement.focus();
+      }
+
+      // Save data to local storage
+      saveToLocalStorage();
+      
+      // If all validations pass, submit the form
+      if (valid) {
+        document.querySelector('form').submit();
+      }
+    }
+
+    // Load form data from local storage when the page loads
+    document.addEventListener('DOMContentLoaded', loadFromLocalStorage);
+
+    // Add input event listeners to save data to local storage
+    document.querySelectorAll('input, textarea').forEach(function(input) {
+      input.addEventListener('input', saveToLocalStorage);
+    });
+
+    // Handle form submission on Enter key press
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
+        event.preventDefault();
+        const formInputs = Array.from(document.querySelectorAll('input, textarea'));
+        const currentIndex = formInputs.indexOf(event.target);
+        const nextIndex = currentIndex + 1;
+        if (nextIndex < formInputs.length) {
+          formInputs[nextIndex].focus();
+        } else {
+          document.getElementById('submit-button').click(); // Trigger form submission
+        }
+      }
+    });
 
 /*=============== SCROLL UP ===============*/
 // Function to check scroll position and show/hide scroll-to-top button

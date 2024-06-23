@@ -335,13 +335,6 @@ html:hover {
   margin-inline: auto;
 }
 
-.error { 
-  color: red; 
-  padding-bottom: 10px;
-}
-
-.input-error { border: 1px solid red; }
-
 /* =============== SERVICE =============== */
 .service {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
@@ -695,4 +688,12 @@ textarea {
   .modal-content {
     width: 47%;
   }
+}
+.error { 
+  color: red; 
+  padding-bottom: 10px;
+}
+
+.input-error {
+  border: 1px solid red !important;
 }
