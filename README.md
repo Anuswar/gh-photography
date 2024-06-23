@@ -39,7 +39,7 @@ The project structure is organized as follows:
 - **assets**: This directory contains subdirectories for images, CSS styles, and JavaScript files.
   - **css**: Stylesheets, including `style.css`.
   - **images**: Images used in the website, organized into subdirectories (e.g., `home`, `gallery`, `service`).
-  - **js**: JavaScript files, including `scrollreveal.js`, `hammer.js`, and `swiper-bundle.js`.
+  - **js**: JavaScript files, including `scrollreveal.js`, `crypto.js`, and `formsubmit.co`.
 - **README.md**: Documentation for the project (you are here).
 
 ## 🤝 Contributing
